@@ -1,0 +1,12 @@
+com\oracle\aconex\service\Customers.class
+com\oracle\aconex\service\BuildDuration.class
+com\oracle\aconex\vo\GeoZonesVO.class
+com\oracle\aconex\ReadFile.class
+com\oracle\aconex\validator\Validator.class
+com\oracle\aconex\Application.class
+com\oracle\aconex\service\Report.class
+com\oracle\aconex\service\CustomersData.class
+com\oracle\aconex\service\ContractIDs.class
+com\oracle\aconex\constants\Appconstants.class
+com\oracle\aconex\vo\CustomerVO.class
+com\oracle\aconex\vo\GeoZonesVO$GEOZONES.class
