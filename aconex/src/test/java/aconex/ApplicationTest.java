@@ -79,10 +79,4 @@ public class ApplicationTest {
 		assertEquals(3445, buildDuration.getAvgBuild("us_east", customerlist));
 	}
 
-	@Test
-	public void falsefilePath() {
-		ReadFile readFile = new ReadFile();
-		assertEquals(null, readFile.readFile("false"));
-	}
-
 }  

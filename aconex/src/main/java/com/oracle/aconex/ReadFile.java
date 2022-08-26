@@ -4,6 +4,8 @@ import java.io.File;
 import java.net.URL;
 import java.nio.file.Files;
 
+import com.oracle.aconex.constants.Appconstants;
+
 
 public class ReadFile {
 
@@ -16,7 +18,7 @@ public class ReadFile {
 	public String readFile(String filePath) {
 		String customerData = null;
 		try {
-			URL url = getClass().getClassLoader().getResource("CustomersData.txt");
+			URL url = getClass().getClassLoader().getResource(Appconstants.DATA_FILE);
 			if (url != null) {
 				File file = new File(url.getPath());
 				customerData = Files.readString(file.toPath());

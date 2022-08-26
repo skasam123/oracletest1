@@ -8,7 +8,7 @@ public class Appconstants {
 
 	public static final String PROJECT = "Project";
 
-	public static final String DATA_FILE = "CustomersData";
+	public static final String DATA_FILE = "CustomersData.txt";
 
 	public static final String SPLIT_BY_COMMA = ",";
 
