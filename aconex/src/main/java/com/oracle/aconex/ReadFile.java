@@ -7,9 +7,12 @@ import java.nio.file.Files;
 
 public class ReadFile {
 
-	
-/*	Read the file and generate the String to parse*/
-	
+	/**
+	 * Read the file and generate the String to parse
+	 * 
+	 * @param filePath - path of the file
+	 * @returns the customer data string
+	 */
 	public String readFile(String filePath) {
 		String customerData = null;
 		try {

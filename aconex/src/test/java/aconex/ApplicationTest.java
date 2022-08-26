@@ -2,7 +2,6 @@ package aconex;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -11,22 +10,22 @@ import org.junit.jupiter.api.Test;
 
 import com.oracle.aconex.ReadFile;
 import com.oracle.aconex.constants.Appconstants;
-import com.oracle.aconex.service.BuildDuration;
+import com.oracle.aconex.service.BuildDurationService;
 import com.oracle.aconex.service.ContractIDs;
 import com.oracle.aconex.service.Customers;
-import com.oracle.aconex.service.CustomersData;
+import com.oracle.aconex.service.CustomersDataService;
 import com.oracle.aconex.vo.CustomerVO;
 
 public class ApplicationTest {
 
-	CustomersData customersData = new CustomersData();
+	CustomersDataService customersData = new CustomersDataService();
 	ReadFile readFile = new ReadFile();
-	String str = readFile.readFile(Appconstants.ORACLE_TEST);
+	String str = readFile.readFile(Appconstants.DATA_FILE);
 
 	Customers customers = new Customers();
 	List<CustomerVO> customerlist = customers.getCustomers(str);
 
-	BuildDuration buildDuration = new BuildDuration();
+	BuildDurationService buildDuration = new BuildDurationService();
 
 	@Test
 	public void falseGeoZone() {
@@ -56,7 +55,7 @@ public class ApplicationTest {
 		st.clear();
 		assertEquals(st, customersData.getCustomerIdsByContractId("us_east", customerlist));
 	}
-	
+
 	@Test
 	public void contractID() {
 		ContractIDs contractIDs = new ContractIDs();
@@ -72,19 +71,18 @@ public class ApplicationTest {
 		st.clear();
 		assertEquals(3445, buildDuration.getAvgBuild("us_east", customerlist));
 	}
-	
+
 	@Test
 	public void falseAverageBuild() {
 		Set<String> st = new HashSet<String>();
 		st.clear();
 		assertEquals(3445, buildDuration.getAvgBuild("us_east", customerlist));
 	}
-	
+
 	@Test
 	public void falsefilePath() {
 		ReadFile readFile = new ReadFile();
 		assertEquals(null, readFile.readFile("false"));
 	}
-
 
 }  

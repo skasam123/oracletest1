@@ -8,9 +8,13 @@ import com.oracle.aconex.validator.Validator;
 import com.oracle.aconex.vo.CustomerVO;
 
 public class Customers {
-	
-	
-	/*Build the customers from the file string*/
+
+	/**
+	 * Build the customers from the file string
+	 * 
+	 * @param str -customerdata string to parse
+	 * @returns the List of customerData
+	 */
 	public List<CustomerVO> getCustomers(String str) {
 
 		List<CustomerVO> customerList = new ArrayList<>();

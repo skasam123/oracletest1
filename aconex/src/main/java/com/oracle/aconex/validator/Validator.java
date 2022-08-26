@@ -5,11 +5,23 @@ import com.oracle.aconex.vo.GeoZonesVO.GEOZONES;
 
 public class Validator {
 
+	/** To save only the validation is success
+	 * @param arr
+	 * @return
+	 */
 	public boolean isValid(String[] arr) {
-		return (geoZoneValidator(arr) && customerIdValidator(arr) && projectCode(arr) && buildDuration(arr));
+		if (arr.length > 5) {
+			return (geoZoneValidator(arr) && customerIdValidator(arr) && projectCode(arr) && buildDuration(arr));
+		}
+		return false;
 	}
-	
-	/*GeoZone Validator*/
+
+	/**
+	 * GeoZone Validator
+	 * 
+	 * @param arr
+	 * @return
+	 */
 	private boolean geoZoneValidator(String[] arr) {
 		for (GEOZONES geoZone : GEOZONES.values()) {
 			if (arr[2] != null && geoZone.name().equalsIgnoreCase(arr[2])) {
@@ -18,9 +30,14 @@ public class Validator {
 		}
 		return false;
 
-	}	
-	
-	/*CustomerId Validator*/
+	}
+
+	/**
+	 * CustomerId Validator
+	 * 
+	 * @param arr
+	 * @return
+	 */
 	private boolean customerIdValidator(String[] arr) {
 		String customerId = arr[0];
 		if (customerId == null || customerId.isEmpty() || customerId.length() != 7)
@@ -32,20 +49,29 @@ public class Validator {
 		}
 		return true;
 	}
-	
-	/*projectCode Validator*/
+
+	/**
+	 * projectCode Validator
+	 * 
+	 * @param arr
+	 * @return
+	 */
 	private boolean projectCode(String[] arr) {
 		String projectCode = arr[4];
 		if (projectCode == null || projectCode.isEmpty()) {
 			return false;
-		}else if(projectCode.startsWith(Appconstants.PROJECT)) {
+		} else if (projectCode.startsWith(Appconstants.PROJECT)) {
 			return true;
 		}
 		return false;
 	}
-	
-	
-	/*buildDuration Validator*/
+
+	/**
+	 * buildDuration Validator
+	 * 
+	 * @param arr
+	 * @return
+	 */
 	private boolean buildDuration(String[] arr) {
 		String duration = arr[5];
 		if (duration == null || duration.isEmpty()) {
@@ -59,6 +85,5 @@ public class Validator {
 		}
 		return true;
 	}
-	
-	
+
 }
