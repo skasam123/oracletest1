@@ -16,7 +16,6 @@ public class ReadFile {
 	public String readFile(String filePath) {
 		String customerData = null;
 		try {
-//			URL url = getClass().getResource(filePath);
 			URL url = getClass().getClassLoader().getResource("CustomersData.txt");
 			if (url != null) {
 				File file = new File(url.getPath());
