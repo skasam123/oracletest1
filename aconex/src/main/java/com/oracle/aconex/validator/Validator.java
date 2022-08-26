@@ -5,7 +5,9 @@ import com.oracle.aconex.vo.GeoZonesVO.GEOZONES;
 
 public class Validator {
 
-	/** To save only the validation is success
+	/**
+	 * To save only if the validation is success
+	 * 
 	 * @param arr
 	 * @return
 	 */
